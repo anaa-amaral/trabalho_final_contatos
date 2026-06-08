@@ -16,13 +16,14 @@ typedef struct
 //vetor que guarda vários contatos, de informações agrupadas
 Contato agenda[MAX];
 
+//variável usada para saber quantos contatos existem
 int totalContatos = 0;
 
 void incluirContato()
 {
     if (totalContatos >= MAX)
     {
-        printf("\nAgenda cheia!\n");
+        printf("\nAgenda cheia!\n");//caso já tenha 100 contatos
         return;
     }
 
@@ -35,9 +36,9 @@ void incluirContato()
     scanf(" %[^\n]", agenda[totalContatos].telefone);
 
     printf("Email: ");
-    scanf(" %[^\n]", agenda[totalContatos].email);
+    scanf(" %[^\n]", agenda[totalContatos].email);//[^\n] serve para ler textos com espaços
 
-    totalContatos++;
+    totalContatos++; //adiciona mais um contato a quantidade
 
     printf("\nContato cadastrado com sucesso!\n");
 }
@@ -48,13 +49,13 @@ void listarContatos()
 
     printf("\nLISTA DE CONTATOS\n");
 
-    if (totalContatos == 0)
+    if (totalContatos == 0)//caso não tenha nenhum contato cadastrado
     {
         printf("Nenhum contato cadastrado.\n");
         return;
     }
 
-    for (i = 0; i < totalContatos; i++)
+    for (i = 0; i < totalContatos; i++)//começa na primeira opção, continua enquanto houver contatos e pula para o próximo contato
     {
         printf("\nContato %d\n", i + 1);
         printf("Nome: %s\n", agenda[i].nome);
@@ -72,11 +73,11 @@ void consultarContato()
     printf("\nCONSULTAR CONTATO\n");
 
     printf("Digite o nome: ");
-    scanf(" %[^\n]", nomeBusca);
+    scanf(" %[^\n]", nomeBusca);//guarda o nome digitado
 
-    for (i = 0; i < totalContatos; i++)
+    for (i = 0; i < totalContatos; i++)//procua de contato em contato
     {
-        if (strcmp(nomeBusca, agenda[i].nome) == 0)
+        if (strcmp(nomeBusca, agenda[i].nome) == 0)//mostra o contato cadastrado
         {
             printf("\nContato encontrado!\n");
             printf("Nome: %s\n", agenda[i].nome);

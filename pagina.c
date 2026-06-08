@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <windows.h>
 #include <string.h>
 
 //define o uma constante que limita a agenda para 100 contatos
@@ -168,22 +169,27 @@ int main()
         switch(opcao)
         {
             case 1:
+                system("cls");
                 incluirContato();
                 break;//para que o programa não execute os próximos cases
 
             case 2:
+                system("cls");
                 listarContatos();
                 break;
 
             case 3:
+                system("cls");
                 consultarContato();
                 break;
 
             case 4:
+                system("cls");
                 excluirContato();
                 break;
 
             case 5:
+                system("cls");
                 printf("\nEncerrando programa...\n");
                 break;
 

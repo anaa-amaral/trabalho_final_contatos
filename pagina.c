@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 
+//define o uma constante que limita a agenda para 100 contatos
 #define MAX 100
 
+//agrupa várias informações relacionadas, como uma ficha de cadastro, onde o STRUCT cria a estrutura e o TYPEDEF cria um apelido
 typedef struct
 {
     char nome[50];
@@ -11,6 +13,7 @@ typedef struct
     char email[50];
 } Contato;
 
+//vetor que guarda vários contatos, de informações agrupadas
 Contato agenda[MAX];
 
 int totalContatos = 0;

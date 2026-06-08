@@ -96,25 +96,25 @@ void consultarContato()
 
 void excluirContato()
 {
-    char nomeExcluir[50];
-    int i, j;
-    int encontrado = 0;
+    char nomeExcluir[50];//nome do usuário que quer excluir
+    int i, j;//variáveis auxiliares
+    int encontrado = 0;//variável de controle
 
     printf("\nEXCLUIR CONTATO\n");
 
     printf("Digite o nome do contato: ");
-    scanf(" %[^\n]", nomeExcluir);
+    scanf(" %[^\n]", nomeExcluir);//lê o nome inteiro digitado
 
-    for (i = 0; i < totalContatos; i++)
+    for (i = 0; i < totalContatos; i++)//percorre todos os nomes cadastrados
     {
-        if (strcmp(nomeExcluir, agenda[i].nome) == 0)
+        if (strcmp(nomeExcluir, agenda[i].nome) == 0)//encontra onde o nome digitado está
         {
-            for (j = i; j < totalContatos - 1; j++)
+            for (j = i; j < totalContatos - 1; j++)//ele começa na posição onde o nome foi encontrado
             {
-                agenda[j] = agenda[j + 1];
+                agenda[j] = agenda[j + 1];//move o próximo contato par essa posição
             }
 
-            totalContatos--;
+            totalContatos--;//diminue a quantidade total de contatos
             encontrado = 1;
 
             printf("\nContato excluido com sucesso!\n");
@@ -148,7 +148,7 @@ int main()
         {
             case 1:
                 incluirContato();
-                break;
+                break;//para que o programa não execute os próximos cases
 
             case 2:
                 listarContatos();

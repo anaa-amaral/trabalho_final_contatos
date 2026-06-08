@@ -43,6 +43,25 @@ void incluirContato()
     printf("\nContato cadastrado com sucesso!\n");
 }
 
+void ordenarContatos()
+{
+    int i, j;
+    Contato temp;
+
+    for (i = 0; i < totalContatos - 1; i++)
+    {
+        for (j = i + 1; j < totalContatos; j++)
+        {
+            if (strcmp(agenda[i].nome, agenda[j].nome) > 0)
+            {
+                temp = agenda[i];
+                agenda[i] = agenda[j];
+                agenda[j] = temp;
+            }
+        }
+    }
+}
+
 void listarContatos()
 {
     int i;
@@ -54,6 +73,8 @@ void listarContatos()
         printf("Nenhum contato cadastrado.\n");
         return;
     }
+
+    ordenarContatos();
 
     for (i = 0; i < totalContatos; i++)//começa na primeira opção, continua enquanto houver contatos e pula para o próximo contato
     {

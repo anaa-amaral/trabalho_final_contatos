@@ -46,13 +46,13 @@ void incluirContato()
 void ordenarContatos()
 {
     int i, j;
-    Contato temp;
+    Contato temp;//armazena um contato temporariamente durante a troca de posições
 
-    for (i = 0; i < totalContatos - 1; i++)
+    for (i = 0; i < totalContatos - 1; i++)//percorre todos os contatos
     {
-        for (j = i + 1; j < totalContatos; j++)
+        for (j = i + 1; j < totalContatos; j++)//compara o i com quem vem depois dele
         {
-            if (strcmp(agenda[i].nome, agenda[j].nome) > 0)
+            if (strcmp(agenda[i].nome, agenda[j].nome) > 0)//o STRCMP compara duas strings
             {
                 temp = agenda[i];
                 agenda[i] = agenda[j];

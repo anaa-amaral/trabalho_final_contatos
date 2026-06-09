@@ -150,6 +150,45 @@ void excluirContato()
     }
 }
 
+void alterarContato()
+{
+    char nomeBusca[50];
+    int i;
+    int encontrado = 0;
+
+    printf("\nALTERAR CONTATO\n");
+
+    printf("Digite o nome do contato: ");
+    scanf(" %[^\n]", nomeBusca);//nome do contato qeu deseja mudar
+
+    for (i = 0; i < totalContatos; i++)//passa por todos os contatos
+    {
+        if (strcmp(nomeBusca, agenda[i].nome) == 0)//acha o contato
+        {
+            printf("\nContato encontrado!\n");
+
+            printf("Novo nome: ");
+            scanf(" %[^\n]", agenda[i].nome);//subistitue diretamento os dados antigos pelos novos
+
+            printf("Novo telefone: ");
+            scanf(" %[^\n]", agenda[i].telefone);
+
+            printf("Novo email: ");
+            scanf(" %[^\n]", agenda[i].email);
+
+            printf("\nContato alterado com sucesso!\n");
+
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (encontrado == 0)
+    {
+        printf("\nContato nao encontrado.\n");
+    }
+}
+
 int main()
 {
     int opcao;

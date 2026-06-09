@@ -161,7 +161,8 @@ int main()
         printf("2 - Listar contatos\n");
         printf("3 - Consultar contato\n");
         printf("4 - Excluir contato\n");
-        printf("5 - Sair\n");
+        printf("5 - Alterar contato\n");
+        printf("6 - Sair\n");
 
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
@@ -174,7 +175,7 @@ int main()
                 break;//para que o programa não execute os próximos cases
 
             case 2:
-                system("cls");
+                system("cls");//ultilizado para deixar a tela mais limpa na hora do uso
                 listarContatos();
                 break;
 
@@ -190,6 +191,10 @@ int main()
 
             case 5:
                 system("cls");
+                alterarContato();
+                break;
+
+            case 6:
                 printf("\nEncerrando programa...\n");
                 break;
 
@@ -197,7 +202,7 @@ int main()
                 printf("\nOpcao invalida!\n");
         }
 
-    } while(opcao != 5);
+    } while(opcao != 6);
 
     return 0;
 }
